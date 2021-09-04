@@ -1,9 +1,14 @@
 <div class="navbar">
-    <p class="title" routerLink="/">数据透视表学习</p>
-    <a class="nav" routerLink="/basic-usage" routerLinkActive="active">基础用法</a>
-    <!-- <a class="nav" routerLink="/ngrx-tutorial" routerLinkActive="active">Ngrx</a>
-    <a class="nav" routerLink="/detection-tutorial" routerLinkActive="active">Detection</a> -->
+    <ul nz-menu nzMode="inline" nzTheme="dark">
+        <li nz-submenu nzTitle="数据透视表学习" nzIcon="setting" nzOpen>
+            <ul>
+                <li nz-menu-item routerLink="/basic-usage" routerLinkActive="ant-menu-item-selected">基础用法</li>
+            </ul>
+        </li>
+    </ul>
 </div>
 <div class="content">
-    <router-outlet></router-outlet>
+    <div class="wrapper">
+        <router-outlet></router-outlet>
+    </div>
 </div>

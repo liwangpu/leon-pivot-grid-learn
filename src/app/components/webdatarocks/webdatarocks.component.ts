@@ -20,20 +20,6 @@ export class WebdatarocksComponent implements OnInit, OnDestroy {
     public width: string | number;
     @Input()
     public height: string | number;
-    // @Input()
-    // public set datas(ds: Array<{ [key: string]: any }>) {
-    //     if (!this.webDataRocks) { return; }
-    //     // this.datas$.next(ds);
-    //     // console.log(1, this.webDataRocks);
-    //     let report: WebDataRocks.Report = {
-    //         dataSource:{
-
-    //         }
-    //     };
-    // }
-
-    // @Input()
-    // public global: WebDataRocks.Report;
     private webDataRocks: WebDataRocks.Pivot;
     @ViewChild('pivotContainer', { read: ElementRef, static: true })
     private readonly pivotContainer: ElementRef;
@@ -59,12 +45,6 @@ export class WebdatarocksComponent implements OnInit, OnDestroy {
                 localization: '/assets/pivot-grid-zh.json'
             }
         });
-
-        // this.subs.sink = this.datas$.subscribe(ds => {
-        //     console.log('ds:', ds);
-
-        // });
-        // this.webDataRocks.setReport();
     }
 
     public setReport(report: WebDataRocks.Report): void {

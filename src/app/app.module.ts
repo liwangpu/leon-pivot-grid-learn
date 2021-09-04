@@ -9,6 +9,7 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { WebdatarocksComponent } from './components/webdatarocks/webdatarocks.component';
 import { BasicUsageComponent } from './components/basic-usage/basic-usage.component';
 
@@ -25,7 +26,8 @@ registerLocaleData(zh);
         BrowserAnimationsModule,
         AppRoutingModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        NzMenuModule
     ],
     providers: [{ provide: NZ_I18N, useValue: zh_CN }],
     bootstrap: [AppComponent]

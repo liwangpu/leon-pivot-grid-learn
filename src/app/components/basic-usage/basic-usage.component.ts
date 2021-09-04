@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-basic-usage',
   templateUrl: './basic-usage.component.html',
-  styleUrls: ['./basic-usage.component.scss']
+  styleUrls: ['./basic-usage.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BasicUsageComponent implements OnInit {
 
-  constructor() { }
+  public constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }
