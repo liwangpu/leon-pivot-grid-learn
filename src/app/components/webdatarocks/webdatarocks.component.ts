@@ -37,10 +37,8 @@ export class WebdatarocksComponent implements OnInit, OnDestroy {
             width: this.width,
             height: this.height,
             toolbar: true,
-            // report: this.report,
-            // global: this.global,
             // customizeCell: this.customizeCell,
-            beforetoolbarcreated: WebdatarocksComponent.customizeToolbar,
+            // beforetoolbarcreated: WebdatarocksComponent.customizeToolbar,
             global: {
                 localization: '/assets/pivot-grid-zh.json'
             }

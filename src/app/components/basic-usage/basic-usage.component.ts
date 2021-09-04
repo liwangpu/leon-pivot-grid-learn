@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import * as WebDataRocks from 'webdatarocks';
+import { WebdatarocksComponent } from '../webdatarocks/webdatarocks.component';
 
 @Component({
   selector: 'app-basic-usage',
@@ -6,11 +8,26 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./basic-usage.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BasicUsageComponent implements OnInit {
+export class BasicUsageComponent implements OnInit, AfterViewInit {
 
-  public constructor() { }
+  @ViewChild(WebdatarocksComponent)
+  private readonly dataRocks: WebdatarocksComponent;
+
+  public constructor(
+    private cd: ChangeDetectorRef
+  ) { }
 
   public ngOnInit(): void {
+
+  }
+
+  public ngAfterViewInit(): void {
+    const report: WebDataRocks.Report = {
+      dataSource: {
+        filename: `/assets/datas/students.json`
+      }
+    };
+    this.dataRocks.setReport(report);
   }
 
 }

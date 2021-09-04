@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100%;
+
+    .grid {
+        flex: 1;
+    }
+}
